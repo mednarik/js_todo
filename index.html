@@ -4,15 +4,20 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <script>
+            let tasks = [];
+            function save_task() {
+                let element = document.getElementById("plac_task");
+                let input = element.querySelector("input");
+                let text = input.value.trim()
+                tasks.push(text);
+            }
+        </script>
         <div id="bg">
-            <div class="task">
-                <input type="checkbox" class="checkbox">
+            <div id="plac_task">
                 <input type="text" class="text">
             </div>
-            <div class="task">
-                <input type="checkbox" class="checkbox">
-                <input type="text" class="text">
-            </div>
+            <button type="button" id="confirm" onclick="save_task()">Confirm</button>
         </div>
     </body>
 </html>
