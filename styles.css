@@ -21,6 +21,13 @@ body {
     display: flex;
 }
 
+.task {
+    height: 70px;
+    background-color: rgb(108, 108, 108);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+}
 .checkbox {
     flex: 1;
 }

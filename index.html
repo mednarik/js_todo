@@ -6,12 +6,44 @@
     <body>
         <script>
             let tasks = [];
+
+            function show_tasks() {
+                let bg = document.getElementById("bg");
+                let plac = document.getElementById("plac_task");
+                let confirm = document.getElementById("confirm");
+
+                bg.innerHTML = "";
+
+                tasks.forEach(task => {
+                    let div = document.createElement("div");
+                    div.className = "task";
+                    bg.appendChild(div);
+                    
+                    let checkbox = document.createElement("input");
+                    checkbox.type = "checkbox";
+                    checkbox.className = "checkbox";
+                    div.appendChild(checkbox);
+
+                    let text = document.createElement("input");
+                    text.type = "text";
+                    text.className = "text";
+                    text.value = task;
+                    div.appendChild(text);
+                })
+
+                bg.appendChild(plac);
+                bg.appendChild(confirm);
+            }
+
             function save_task() {
                 let element = document.getElementById("plac_task");
                 let input = element.querySelector("input");
                 let text = input.value.trim()
                 tasks.push(text);
+                console.log(text);
+                show_tasks();
             }
+
         </script>
         <div id="bg">
             <div id="plac_task">
